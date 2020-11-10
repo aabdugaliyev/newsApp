@@ -10,7 +10,7 @@ namespace App\Http\Repositories;
 
 
 use App\Http\Models\News;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class NewsRepository
 {

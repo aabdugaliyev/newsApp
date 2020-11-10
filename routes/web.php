@@ -14,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/news', 'NewsController@getNews');
+Route::post('/news/add', 'NewsController@createNews');
 Route::get('/news/{id}', 'NewsController@getNewsById');
-Route::get('/news/add', 'NewsController@createNews');
 Route::get('/news/edit/{id}', 'NewsController@updateNews');
 Route::get('/news/delete/{id}', 'NewsController@deleteNews');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
