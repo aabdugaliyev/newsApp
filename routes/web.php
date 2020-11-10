@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/news', 'NewsController@getNews');
+Route::get('/news/{id}', 'NewsController@getNewsById');
+Route::get('/news/add', 'NewsController@createNews');
+Route::get('/news/edit/{id}', 'NewsController@updateNews');
+Route::get('/news/delete/{id}', 'NewsController@deleteNews');
